@@ -34,8 +34,8 @@ Read [`docs/security-model.md`](docs/security-model.md) before adapting the exam
 
 ## Status
 
-This is a review-ready public-proof candidate. It is intentionally kept separate from the private core until ownership, licensing, privacy, and publication review are complete.
+This is a review-ready public-proof candidate. It is intentionally kept separate from the private core. Ownership and publication approval have been confirmed for the contents of this repository; the private implementation remains excluded.
 
 ## License
 
-Publication license is intentionally undecided. Do not treat this repository as an authorization to reuse the private implementation.
+This Public Proof is licensed under the [Apache License 2.0](LICENSE). The license applies only to the contents of this repository and does not grant access to, or permission to reproduce, the private AI Engineering OS implementation.
