@@ -1,0 +1,35 @@
+{
+  "contract_version": "0.1",
+  "domain": "synthetic-order-service",
+  "data_classification": "synthetic",
+  "provider_dependency": "none",
+  "operation": "create_order",
+  "request": {
+    "customer_id": "customer_demo_001",
+    "items": [
+      {
+        "sku": "SKU-DEMO-001",
+        "quantity": 2
+      }
+    ],
+    "currency": "USD"
+  },
+  "response": {
+    "order_id": "order_demo_001",
+    "status": "accepted",
+    "total_minor_units": 2400,
+    "currency": "USD"
+  },
+  "evidence_requirements": [
+    "request_schema_valid",
+    "response_schema_valid",
+    "provider_neutral_route",
+    "no_literal_secret",
+    "artifact_hash_recorded"
+  ],
+  "security_constraints": [
+    "no_remote_shell_pipeline",
+    "no_prompt_bypass_instruction",
+    "no_customer_data"
+  ]
+}

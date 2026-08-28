@@ -1,0 +1,12 @@
+workflow: create_order
+contract: examples/synthetic-contract.json
+request:
+  customer_id: customer_demo_001
+  items:
+    - sku: SKU-DEMO-001
+      quantity: 2
+  currency: USD
+constraints:
+  data_classification: synthetic
+  provider_dependency: none
+  evidence_required: true
