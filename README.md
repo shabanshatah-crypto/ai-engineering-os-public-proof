@@ -24,6 +24,16 @@ The public proof demonstrates five ideas:
 
 The private repository remains the source of the runtime and release implementation. This repository does not include `src/`, `application/`, `core/`, provider adapters, customer data, internal prompts, production configuration, or executable demo credentials. A public reader can understand the value and inspect the proof without reconstructing the private engine.
 
+## Resources
+
+| Document | Purpose |
+|----------|---------|
+| [`docs/one-pager.md`](docs/one-pager.md) | Quick overview for executives and investors |
+| [`docs/architecture-diagram.md`](docs/architecture-diagram.md) | Visual system architecture and workflow diagrams |
+| [`docs/case-study-template.md`](docs/case-study-template.md) | Template for documenting pilot results (private use) |
+| [`docs/discovery-kit.md`](docs/discovery-kit.md) | Conversation guide for customer discovery |
+| [`docs/security-model.md`](docs/security-model.md) | Security boundaries and prohibited content |
+
 ## Request a private pilot
 
 A pilot should use one narrowly scoped workflow, synthetic or explicitly approved data, a fixed duration, a measurable baseline, and a reviewable artifact. Contact the maintainers with the workflow, current baseline, security constraints, and the success measure. No customer data should be sent through this public repository.
