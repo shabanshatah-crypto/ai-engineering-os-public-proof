@@ -1,4 +1,9 @@
-```
-# Documentation files are source content and should not be ignored
-# The added documentation files (.md) are part of the project source
-```
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+__pycache__/
+.venv/
+.DS_Store
