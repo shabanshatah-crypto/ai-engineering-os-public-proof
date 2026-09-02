@@ -1,51 +1,97 @@
 # AI Engineering OS — Public Proof
 
-This repository is a deliberately separated **Public Proof** for AI Engineering OS. It demonstrates the problem, the operating contract, the evidence model, and the security boundaries using synthetic data only. It does **not** contain the private runtime, orchestration implementation, customer integrations, credentials, or internal deployment configuration.
+A reviewable public proof for controlled, reproducible AI-assisted engineering workflows.
+
+This repository demonstrates the workflow contract, evidence shape, and security boundaries behind AI Engineering OS. It uses synthetic data only and intentionally excludes the private runtime, customer integrations, credentials, and production configuration.
 
 ## The problem
 
-AI engineering workflows often produce plausible output without a reproducible record of what was requested, which policies were applied, what was verified, and which artifact was released. Teams need a controlled path from discovery to execution, inspection, verification, and release evidence without coupling their product to a single model provider.
+AI-assisted engineering can produce plausible output without a clear record of:
 
-## The public example
+- What was requested
+- Which constraints and policies were applied
+- What was verified
+- Which artifact was accepted
+- What evidence supports the release decision
 
-The synthetic example in [`examples/synthetic-contract.json`](examples/synthetic-contract.json) describes a fictional `Order` API. The corresponding input and output show the kind of contract and evidence that a controlled workflow can expose without publishing its private implementation.
+This can make review, reproducibility, handoff, and release accountability harder to manage.
 
-The public proof demonstrates five ideas:
+## The approach
+
+AI Engineering OS is designed around a controlled workflow:
+
+```text
+Discovery
+   ↓
+Execution
+   ↓
+Verification
+   ↓
+Release Evidence
+```
+
+The public proof exposes the shape of this workflow without publishing the private implementation.
+
+## What this repository demonstrates
 
 | Capability | Public evidence |
 |---|---|
-| Workflow contract | A stable sequence from discovery to release attestation |
-| Provider neutrality | No provider SDK, API key, or vendor-specific implementation is included |
-| Evidence | Deterministic metadata and a reviewable result shape |
-| Security boundary | Explicit refusal rules for remote shell execution, prompt bypasses, and literal secrets |
-| Reproducibility | A small synthetic fixture that can be reviewed independently |
+| Workflow contract | A declared path from discovery to release evidence |
+| Provider neutrality | No provider SDK, API key, or vendor-specific runtime |
+| Structured evidence | Machine-readable synthetic contract and illustrative result |
+| Security boundaries | Explicit constraints against secrets, prompt bypasses, and remote shell pipelines |
+| Reproducibility | Small fixtures that can be reviewed independently |
 
-## What is intentionally not here
+## What this repository does not claim
 
-The private repository remains the source of the runtime and release implementation. This repository does not include `src/`, `application/`, `core/`, provider adapters, customer data, internal prompts, production configuration, or executable demo credentials. A public reader can understand the value and inspect the proof without reconstructing the private engine.
+This repository does not claim:
 
-## Resources
+- Production performance
+- Customer outcomes
+- Security certification
+- Compatibility with every AI provider
+- A complete runnable implementation
+- Results from a customer deployment
 
-| Document | Purpose |
-|----------|---------|
-| [`docs/one-pager.md`](docs/one-pager.md) | Quick overview for executives and investors |
-| [`docs/architecture-diagram.md`](docs/architecture-diagram.md) | Visual system architecture and workflow diagrams |
-| [`docs/case-study-template.md`](docs/case-study-template.md) | Template for documenting pilot results (private use) |
-| [`docs/discovery-kit.md`](docs/discovery-kit.md) | Conversation guide for customer discovery |
-| [`docs/security-model.md`](docs/security-model.md) | Security boundaries and prohibited content |
+Those claims require separate technical validation, approved data, and a documented pilot baseline.
+
+## Public proof contents
+
+- [`examples/synthetic-contract.json`](examples/synthetic-contract.json) — fictional API contract
+- [`examples/sample-input.txt`](examples/sample-input.txt) — example workflow input
+- [`examples/sample-output.json`](examples/sample-output.json) — illustrative evidence output
+- [`docs/architecture-diagram.md`](docs/architecture-diagram.md) — public architecture overview
+- [`docs/one-pager.md`](docs/one-pager.md) — concise product overview
+- [`docs/case-study-template.md`](docs/case-study-template.md) — private-use pilot documentation template
+- [`docs/discovery-kit.md`](docs/discovery-kit.md) — bounded discovery and pilot questions
+- [`docs/security-model.md`](docs/security-model.md) — public security boundary
+
+## Private implementation
+
+The private repository contains the implementation, runtime components, domain-specific workflow support, integrations, verification tooling, and test suites.
+
+Access to the private implementation is not granted by this repository. It is shared only through an approved review, pilot, or partnership process.
 
 ## Request a private pilot
 
-A pilot should use one narrowly scoped workflow, synthetic or explicitly approved data, a fixed duration, a measurable baseline, and a reviewable artifact. Contact the maintainers with the workflow, current baseline, security constraints, and the success measure. No customer data should be sent through this public repository.
+We are interested in narrowly scoped workflows where reproducibility, review effort, evidence, or release traceability can be measured.
 
-## Security
+A useful pilot request should include:
 
-Read [`docs/security-model.md`](docs/security-model.md) before adapting the example. The security model is descriptive and does not claim that this repository is a production security boundary.
+- The workflow to evaluate
+- The current baseline
+- Data classification and security constraints
+- The intended success measure
+- The person responsible for the decision
+
+To start a conversation, [open a GitHub Issue](https://github.com/shabanshatah-crypto/ai-engineering-os-public-proof/issues/new) with a non-confidential summary of the workflow and the outcome you want to measure.
+
+Do not submit customer data, credentials, proprietary payloads, or confidential information through this repository.
 
 ## Status
 
-This is a review-ready public-proof candidate. It is intentionally kept separate from the private core. Ownership and publication approval have been confirmed for the contents of this repository; the private implementation remains excluded.
+This repository is a public proof and review artifact. The private implementation remains separate and is not included here.
 
 ## License
 
-This Public Proof is licensed under the [Apache License 2.0](LICENSE). The license applies only to the contents of this repository and does not grant access to, or permission to reproduce, the private AI Engineering OS implementation.
+This Public Proof is licensed under the [Apache License 2.0](LICENSE). The license applies only to the contents of this repository and does not grant access to, or permission to reproduce, the private implementation.

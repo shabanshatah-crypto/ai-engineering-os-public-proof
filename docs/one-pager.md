@@ -1,79 +1,100 @@
-# AI Engineering OS — One-Pager
+# AI Engineering OS — Public Overview
 
-## The Problem in One Sentence
+## A controlled evidence path for AI-assisted engineering
 
-Engineering teams using AI to generate code, APIs, or workflows get plausible output **without a reproducible record** of what was requested, which policies were applied, what was verified, and which artifact was released.
+AI-assisted engineering workflows can produce useful output without preserving a reproducible record of the request, constraints, verification steps, and release decision.
 
-## The Cost
+AI Engineering OS is designed to make that path explicit.
 
-| Symptom | Impact |
-|---------|--------|
-| Rework cycles | 2-4x time spent reviewing AI output |
-| Audit failures | Cannot prove compliance or trace decisions |
-| Vendor lock-in | Workflows tied to specific AI providers |
-| Security gaps | No controlled boundary between AI and production systems |
+## The workflow
 
-## The Solution
-
-**AI Engineering OS** provides a controlled path from **discovery to release evidence** with:
-
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐     ┌──────────────┐
-│  Discovery  │ ──▶ │  Execution   │ ──▶ │ Verification│ ──▶ │   Release    │
-│  Contract   │     │  (Provider   │     │  (Evidence  │     │  Attestation │
-│             │     │   Neutral)   │     │   Checks)   │     │              │
-└─────────────┘     └──────────────┘     └─────────────┘     └──────────────┘
-       │                   │                    │                    │
-       ▼                   ▼                    ▼                    ▼
-  What we're          How it runs          What passed         What shipped
-  building            without vendor       verification        with proof
-                      lock-in              gates
+```text
+Discovery Contract
+        ↓
+Provider-Neutral Execution
+        ↓
+Verification and Evidence
+        ↓
+Release Attestation
 ```
 
-## Key Differentiators
+Each stage is intended to produce a reviewable handoff rather than an opaque result.
 
-| Feature | Competitors | AI Engineering OS |
-|---------|-------------|-------------------|
-| **Reproducibility** | Black-box output | Deterministic evidence trail |
-| **Provider Lock-in** | Tied to OpenAI/Anthropic | Provider-neutral routing |
-| **Audit Trail** | Logs only | Structured attestation artifacts |
-| **Security Boundary** | Trust the model | Explicit refusal rules + verification |
+## What the approach is designed to address
 
-## What We Deliver
+Teams evaluating AI-assisted engineering workflows may need better ways to manage:
 
-1. **Workflow Contract** — Stable sequence from discovery to release
-2. **Evidence Package** — Machine-readable verification records
-3. **Security Gates** — Refusal rules for unsafe operations
-4. **Pilot-Ready** — Measurable baseline in 2 weeks
+- Reproducibility
+- Review and rework
+- Validation failures
+- Provider changes
+- Security constraints
+- Release traceability
+- Evidence for technical or compliance review
 
-## Pilot Structure
+The appropriate baseline and success measure depend on the team's workflow and are established before any pilot.
 
-| Component | Details |
-|-----------|---------|
-| **Duration** | 2 weeks |
-| **Scope** | One narrowly-defined workflow |
-| **Data** | Synthetic or explicitly approved |
-| **Baseline** | Current time-to-artifact, rework cycles |
-| **Success Measure** | Reduction in review time, audit readiness |
-| **Output** | Reviewable artifact + comparison report |
+## What is included in the public proof
 
-## Current Status
+This repository provides:
 
-- ✅ **Public Proof Ready** — Synthetic examples, security model, evidence structure
-- 🔒 **Private Core** — Runtime, orchestration, integrations (not published)
-- 🎯 **Seeking Pilots** — Teams with reproducible AI workflow pain
+- A synthetic workflow contract
+- An illustrative evidence output
+- A public architecture overview
+- Security boundaries and refusal rules
+- A discovery guide for defining a bounded pilot
+- A template for documenting pilot results privately
 
-## Call to Action
+## What is not included
 
-**For Engineering Leaders:**  
-If your team spends more than 20% of sprint time reviewing/reworking AI output, we should talk.
+The public repository does not contain:
 
-**For Investors:**  
-We're solving the reproducibility gap in AI engineering—a $10B+ problem by 2027 (Gartner).
+- The private runtime
+- Customer integrations
+- Production configuration
+- Credentials
+- Customer data
+- Internal prompts
+- The complete implementation
+- Production performance results
 
-**Next Step:**  
-Schedule a 30-minute discovery call to identify one bounded workflow for a 2-week pilot.
+## Pilot model
 
----
+A private pilot should be:
 
-*This one-pager is based on the public proof repository. Private implementation details available under NDA.*
+| Component | Description |
+|---|---|
+| Scope | One narrowly defined workflow |
+| Duration | A fixed period agreed in advance |
+| Data | Synthetic or explicitly approved data |
+| Baseline | Current workflow time, rework, or validation measures |
+| Success measure | Agreed before execution |
+| Output | Reviewable artifact and comparison report |
+
+The duration is a planning default, not a guaranteed outcome.
+
+## Who should start a conversation?
+
+This may be relevant to engineering, platform, security, or developer-productivity teams that are evaluating how to introduce AI into repeatable workflows while preserving reviewability and control.
+
+The first step is not a broad product rollout. It is identifying one specific workflow whose current process and success criteria can be measured.
+
+## Request a private pilot
+
+Share the following in a non-confidential summary:
+
+1. The workflow you want to evaluate
+2. The current process and baseline
+3. Security or data restrictions
+4. The desired outcome
+5. The person who owns the decision
+
+**Start here:** [open a GitHub Issue](https://github.com/shabanshatah-crypto/ai-engineering-os-public-proof/issues/new)
+
+Do not submit customer data, credentials, proprietary payloads, or confidential information through the public repository.
+
+## Evidence boundary
+
+This public proof demonstrates a workflow shape and evidence model. It does not establish production performance, customer outcomes, security certification, or universal provider compatibility.
+
+Private implementation details are available only through an approved review or pilot process.
